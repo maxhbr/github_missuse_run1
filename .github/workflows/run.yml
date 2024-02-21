@@ -10,7 +10,7 @@ jobs:
     - uses: cachix/install-nix-action@v25
       with:
         github_access_token: ${{ secrets.GITHUB_TOKEN }}
-    - run: nix run --refresh "github:maxhbr/myphoto"#myphoto-stack -- --workdir=workdir *.JPG
+    - run: nix run --refresh "github:maxhbr/myphoto"#myphoto-stack -- --workdir=workdir *
     - run: ls
     - run: ls workdir
     - uses: actions/upload-artifact@v4
